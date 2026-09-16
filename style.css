@@ -161,8 +161,50 @@ body {
 
 .authorArea{
   display: flex;
-  margin-left: auto;
+  align-items: center;
   gap: 8px;
+}
+
+.middleSection{
+  padding:16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* gap: 16px; */
+}
+
+.comment{
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding-right: 24px; 
+}
+
+.like{
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.save{
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding-left: 24px; 
+}
+
+.commentSection{
+  border-top: 1px solid var(--color-border);
+  padding: 16px;
+}
+.topCommentSection{
+  display: flex;
+  justify-content: space-between;
+  gap: 220px;
+  align-items: center;
+}
+.commentText{
+  padding-top: 16px;
 }
 
 .description{
