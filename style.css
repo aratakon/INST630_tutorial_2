@@ -10,14 +10,18 @@
 
 /* External font - add your choice from Google Fonts, Inter will not be graded */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
 
 :root {
   /* Spacing scale */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
+  --spacing-lg: 1.5rem; 
   --spacing-xl: 2rem;
+  /* 1.5 rem means 24px */
   
   /* Colors - customize these */
   --color-bg: hsl(210, 20%, 98%);
@@ -59,10 +63,15 @@ body {
 .page-layout {
   display: grid;
   /* YOUR CODE: grid-template-areas */
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+    /* grid-template-columns: var(--spacing-lg); */
   /* YOUR CODE: grid-template-columns */
-  /* YOUR CODE: grid-template-rows */
+  grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
 }
 
 /* ===========================================
@@ -85,7 +94,8 @@ body {
 
 .list-section {
   /* YOUR CODE: grid-area */
-  padding: var(--spacing-lg);
+  /* changed the padding here so all 3 would fit here  */
+  padding-top: var(--spacing-lg);
 }
 
 .site-footer {
@@ -101,6 +111,10 @@ body {
    
    Use Flexbox to arrange items WITHIN grid regions
    =========================================== */
+  .componentMain{
+    display: flex;
+    background: var(--color-surface);
+  }
 
 .header-nav {
   display: flex;
@@ -118,6 +132,9 @@ body {
 /* Make list items flow horizontally on large screens */
 .list-section {
   /* YOUR CODE: display flex, gap, wrap behavior */
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
 }
 
 .list-item {
@@ -125,9 +142,32 @@ body {
   padding: var(--spacing-lg);
   border-radius: 0.5rem;
   border: 1px solid var(--color-border);
+  width: 471px;
   /* YOUR CODE: flex-basis or width for sizing */
 }
 
+.topSection{
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.headerArea{
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  align-items: center;
+  
+}
+
+.authorArea{
+  display: flex;
+  margin-left: auto;
+  gap: 8px;
+}
+
+.description{
+  padding-top: 16px;
+}
 /* ===========================================
    TASK 4: RESPONSIVE BREAKPOINT
    
@@ -144,6 +184,8 @@ body {
   
   .list-section {
     /* YOUR CODE: change flex-direction if needed */
+    display: flex;
+    flex-direction: column;
   }
   
   .list-item {
@@ -161,6 +203,32 @@ h1 {
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: var(--spacing-md);
+}
+
+/* from figma  */
+h2{
+  font-family:  "Libre Baskerville";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+p{
+font-family: "Roboto Mono";
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.lighter-text{
+  color: #1E1E1E;
+  font-family: "Roboto Mono";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
 }
 
 a {
