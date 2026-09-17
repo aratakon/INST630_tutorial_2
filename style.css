@@ -66,8 +66,9 @@ body {
   grid-template-areas:
     "header"
     "main"
+    "listSection"
     "footer";
-    /* grid-template-columns: var(--spacing-lg) 1fr var(--spacing-lg); */
+    grid-template-columns: 1fr;
   /* YOUR CODE: grid-template-columns */
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
@@ -75,34 +76,43 @@ body {
 }
 
 /* ===========================================
-   TASK 2: ASSIGN GRID AREAS
+   TASK 2: ASSIGN GRID AREAS done
    
    Connect each section to its named area
    =========================================== */
 
 .site-header {
   /* YOUR CODE: grid-area */
-  background: var(--color-surface);
+  grid-area: header;
+  /* background: var(--color-surface); */
+  background: hsl(251, 76%, 79%);
+  color: hsl(0, 0%, 100%);
   padding: var(--spacing-md) var(--spacing-lg);
   border-bottom: 1px solid var(--color-border);
 }
 
 .hero-section {
   /* YOUR CODE: grid-area */
+  grid-area: main;
   padding: var(--spacing-xl);
 }
 
 .list-section {
   /* YOUR CODE: grid-area */
   /* changed the padding here so all 3 would fit here  */
-  padding-top: var(--spacing-lg);
+  grid-area: listSection;
+  padding: var(--spacing-lg);
 }
 
 .site-footer {
   /* YOUR CODE: grid-area */
+  grid-area: footer;
   background: var(--color-text);
   color: var(--color-bg);
   padding: var(--spacing-lg);
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
   /* NOTE: Footer should not exceed main content width */
 }
 
@@ -225,6 +235,7 @@ body {
     grid-template-areas:
     "header"
     "main"
+    "listSection"
     "footer";
   }
   
